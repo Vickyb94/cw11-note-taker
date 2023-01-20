@@ -11,5 +11,13 @@ router.get('/api/notes', (req, res) => {
 });
 
 //post request sends a new note that is saved in json file and is returned to client
-router.post('/api/notes', (req, res) => {res.json(noteList)})
+router.post('/api/notes', (req, res) => {res.json(noteList)
+    
+    //create title, text, and id for each note saved
+    const noteInfo = {title: req.body.title, text: req.body, id: uuid.v9()};
+      noteList.push(noteInfo);
+      res.json(noteList);
+    });     
+
+    module.exports = router;
 
