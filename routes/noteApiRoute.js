@@ -2,6 +2,7 @@ const express = require('express');   //import express package
 const router = express.Router();
 const uuid = require('uuid');    //to create an id for each note
 const path = require('path')
+const fs = require('fs');
 
 const noteList = JSON.parse(fs.readFileSync('../db/db.json'));
 
