@@ -8,4 +8,8 @@ const noteList = JSON.parse(fs.readFileSync('../db/db.json'));
 //create routes so Get /api/notes reads the db.json file and return all saved notes as JSON.
 router.get('/api/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '../db/db.json'))
-})
+});
+
+//post request sends a new note that is saved in json file and is returned to client
+router.post('/api/notes', (req, res) => {res.json(noteList)})
+
