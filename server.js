@@ -11,4 +11,12 @@ app.use(express.static('public'));
 
 //sending data to the server to store req.body
 app.use(express.urlencoded({ extended: true}));
+//parse incoming json request
+app.use(express.json());
+
+const routes = require('./routes');
+
+//using custom middleware to stage routes
+app.use('/api/notes', require('./route/noteApi'));
+app.use('/', require('./route/html'));
 
