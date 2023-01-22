@@ -17,7 +17,7 @@ app.use(express.json());
 //const routes = require('./routes');
 
 //using custom middleware to stage routes
-app.use('/api/notes', require('./routes/noteApiRoute'));
+app.use('/api', require('./routes/noteApiRoute'));
 app.use('/', require('./routes/htmlRoute'));
 
 //create server listener
