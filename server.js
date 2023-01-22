@@ -14,11 +14,11 @@ app.use(express.urlencoded({ extended: true}));
 //parse incoming json request
 app.use(express.json());
 
-const routes = require('./routes');
+//const routes = require('./routes');
 
 //using custom middleware to stage routes
-app.use('/api/notes', require('./route/noteApi'));
-app.use('/', require('./route/html'));
+app.use('/api/notes', require('./routes/noteApiRoute'));
+app.use('/', require('./routes/htmlRoute'));
 
 //create server listener
 app.listen(PORT, () =>

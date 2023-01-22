@@ -4,7 +4,7 @@ const uuid = require('uuid');    //to create an id for each note
 const path = require('path')
 const fs = require('fs');
 
-const noteList = JSON.parse(fs.readFileSync('../db/db.json'));
+const noteList = JSON.parse(fs.readFileSync('./db/db.json'));
 
 //create routes so Get /api/notes reads the db.json file and return all saved notes as JSON.
 router.get('/api/notes', (req, res) => {
