@@ -20,3 +20,7 @@ const routes = require('./routes');
 app.use('/api/notes', require('./route/noteApi'));
 app.use('/', require('./route/html'));
 
+//create server listener
+app.listen(PORT, () =>
+      console.log(`Note Taker App listening for requests on port ${PORT}!`));
+
