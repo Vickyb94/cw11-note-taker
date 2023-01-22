@@ -8,3 +8,7 @@ const PORT = process.env.PORT || 3001;
 
 //link files in the public folder with static middleware
 app.use(express.static('public'));
+
+//sending data to the server to store req.body
+app.use(express.urlencoded({ extended: true}));
+
