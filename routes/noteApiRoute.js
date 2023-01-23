@@ -15,9 +15,11 @@ router.get('/notes', (req, res) => {
 router.post('/notes', (req, res) => {res.json(noteList)
     
     //create title, text, and id for each note saved
-    const noteInfo = {title: req.body.title, text: req.body, id: uuid.v9()};
+    //const noteInfo = {title: req.body.title, text: req.body, id: uuid()};
+    const noteInfo = {title: req.body.title, text: req.body.text, id: uuid.v1};
       noteList.push(noteInfo);
-      fs.writeFileSync('db/db.json', JSON.stringify(db));
+      //fs.writeFileSync('db/db.json', JSON.stringify(db));
+      fs.writeFileSync('db/db.json', JSON.stringify(noteList));
       res.json(noteList);
     });     
 
